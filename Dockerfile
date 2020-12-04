@@ -11,5 +11,7 @@ LABEL "repository"="https://github.com/hipages/argocd-actions"
 LABEL "homepage"="https://github.com/hipages/argocd-actions"
 
 COPY src/ /
+RUN mkdir -p $HOME/.argocd \
+    && chown $(id -u ${USER}):$(id -g ${USER}) $HOME/.argocd
 
 ENTRYPOINT ["/entrypoint.sh"]
