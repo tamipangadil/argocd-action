@@ -10,5 +10,6 @@ LABEL "com.github.actions.color"="yellow"
 LABEL "repository"="https://github.com/hipages/argocd-actions"
 LABEL "homepage"="https://github.com/hipages/argocd-actions"
 
-ENTRYPOINT ["/usr/local/bin/argocd"]
-CMD ["help"]
+COPY src/ /
+
+ENTRYPOINT ["/entrypoint.sh"]

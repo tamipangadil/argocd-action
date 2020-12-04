@@ -5,6 +5,12 @@ inputs:
     description: 'Version'
     required: true
     default: 'latest'
+  command:
+    description: 'Command'
+    required: true
+    default: 'argocd version'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
